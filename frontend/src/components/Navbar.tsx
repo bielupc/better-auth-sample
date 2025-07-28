@@ -1,9 +1,6 @@
+import { SetPage } from "../lib/openfortAuth";
 
-type NavbarProps = {
-  setPage: React.Dispatch<React.SetStateAction<string>>;
-};
-
-export function Navbar({ setPage }: NavbarProps) {
+export function Navbar({ setPage }: SetPage) {
   return (
     <nav className='flex flex-row space-x-12 px-10 bg-white font-bold p-4 rounded-lg shadow-lg justify-center items-center'>
       <button

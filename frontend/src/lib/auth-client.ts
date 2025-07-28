@@ -1,6 +1,5 @@
 import { createAuthClient } from "better-auth/client"
 
 export const authClient = createAuthClient({
-  // Backend URL
-  baseURL: "http://localhost:8000"
+  baseURL: import.meta.env.VITE_BACKEND_URL  // Backend URL
 })

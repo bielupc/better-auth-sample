@@ -1,16 +1,13 @@
 import { useState } from "react";
-import { authClient } from "../lib/auth-client"; 
+import { authClient } from "../lib/auth-client";
+import { SetPage } from "../lib/openfortAuth";
 
-type SignupProps = {
-  setPage: React.Dispatch<React.SetStateAction<string>>;
-};
-
-
-export function SignupForm({setPage}: SignupProps) {
+export function SignupForm({ setPage }: SetPage) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
 
+  // Better auth singup function
   async function handleSignup() {
     await authClient.signUp.email(
       {
@@ -21,13 +18,16 @@ export function SignupForm({setPage}: SignupProps) {
       },
       {
         onRequest: () => console.log("Signing up..."),
-        onSuccess: () => alert("Signup successful! Please verify your email."),
+        onSuccess: () => {
+          alert("Signup successful!")
+          setPage("login");
+        },
         onError: ctx => alert("Signup failed: " + ctx.error.message),
       }
     );
-    setPage("login");
   }
 
+  // Render signup form
   return (
     <div className="flex flex-col space-y-4 w-3/4">
       <input placeholder="Name" className="px-4 py-4 rounded-lg" value={name} onChange={e => setName(e.target.value)} />

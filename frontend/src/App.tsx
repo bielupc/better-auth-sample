@@ -9,7 +9,7 @@ import logoBA from './assets/logo_ba.svg';
 import logoOF from './assets/logo_of.svg';
 
 function App() {
-  const [page, setPage] = useState('login');
+  const [page, setPage] = useState('wallet');
   return (
     <Providers>
       <div className='flex justify-start items-center flex-col space-y-20 min-h-[50vh]'>
