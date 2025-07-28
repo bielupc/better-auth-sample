@@ -16,7 +16,7 @@ The `/frontend/src/components/` folder stores the login, register and wallet ins
 ### 1. Start by cloning the repo
 
 ```bash
-git clone https://github.com/openfort-xyz/{?????}.git
+git clone https://github.com/openfort-xyz/openfort-js.git
 ```
 
 ### 2. Fill the `.env` files
